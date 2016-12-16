@@ -73,6 +73,16 @@ app.get('/api', function api_index(req, res) {
     ]
   })
 });
+var time = function() {
+  var d = new Date();
+  var h = d.getHours();
+  if (h<22 && h>5) {
+    return true;
+  } else {
+    return false;
+  };
+  console.log(h);
+};
 //////////   DISPLAY EMBEDDED PROFILE INFO   //////////
 app.get('/api/profile', function api_index(req, res) {
   res.json({
@@ -83,6 +93,7 @@ app.get('/api/profile', function api_index(req, res) {
     personalSiteLink: "https://vedelopment.github.io/",
     currentCity: "San Francisco",
     isWeird: true,
+    isAwake: time(),
     familyMembers: [
       { name: 'Barbara Dean', relationship: 'mother' },
       { name: 'Philipe', relationship: 'sibling' },

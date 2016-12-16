@@ -11,7 +11,8 @@ var artists_list = [
   soloArtist: true,
   favoriteAlbum: "The Drift",
   alive: true
-  },
+},
+{
   name: "The Pharcyde",
   image: "https://ichef.bbci.co.uk/images/ic/960x540/p01bqp2z.jpg",
   genre: "Alternative Hip-Hop",

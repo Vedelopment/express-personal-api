@@ -7,8 +7,7 @@ var ArtistSchema = new Schema({
   genre: String,
   soloArtist: Boolean,
   favoriteAlbum: String,
-  alive: Boolean,
-
+  alive: Boolean
 });
 
 var Artist = mongoose.model('Artist', ArtistSchema);

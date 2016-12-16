@@ -1,15 +1,30 @@
 // This file allows us to seed our application with data
 // simply run: `node seed.js` from the root of this project folder.
 
-// var db = require('./models');
+var db = require('./models');
 
-// var new_campsite = {description: "Sharp rocks. Middle of nowhere."}
+var artist_list = [
+  {
+  name: "Scott Walker",
+  image: "http://ksassets.timeincuk.net/wp/uploads/sites/55/2016/07/2014ScottWalker_Press_020714-1.jpg"
+  genre: "Experimental",
+  soloArtist: true,
+  favoriteAlbum: "The Drift",
+  alive: true,
+  },
+]
 
-// db.Campsite.create(new_campsite, function(err, campsite){
-//   if (err){
-//     return console.log("Error:", err);
-//   }
+db.Artist.remove({}, function(err, artists){
+  if(err) {
+    console.log('Error occurred in remove', err);
+  } else {
+    console.log('removed all artists');
 
-//   console.log("Created new campsite", campsite._id)
-//   process.exit(); // we're all done! Exit the program.
-// })
+    // create new records based on the array books_list
+    db.Artist.create(artist_list, function(err, artists){
+      if (err) { return console.log('err', err); }
+      console.log("created", artists.length, "artists");
+      process.exit();
+    });
+  }
+});

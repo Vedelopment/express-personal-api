@@ -77,7 +77,7 @@ app.get('/api/profile', function api_index(req, res) {
     githubUsername: "Vedelopment",
     githubLink: "https://github.com/Vedelopment",
     githubProfileImage: "https://avatars3.githubusercontent.com/u/22309434?v=3&u=82ee850006bb03a1a59fdf401ccd5e6735bde7b5&s=400",
-    personalSiteLink: "",
+    personalSiteLink: "https://vedelopment.github.io/",
     currentCity: "San Francisco",
     isWeird: true,
     familyMembers: [

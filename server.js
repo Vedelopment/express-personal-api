@@ -73,6 +73,8 @@ app.get('/api', function api_index(req, res) {
     ]
   })
 });
+
+//////////   CALCULATES TIME OF DAY   //////////
 var time = function() {
   var d = new Date();
   var h = d.getHours();
@@ -83,6 +85,14 @@ var time = function() {
   };
   console.log(h);
 };
+
+//////////   CALCULATES AGE   //////////
+var today = new Date();
+var age = new Date('1983-02-10');
+var timeinmilisec = today - age
+var daysOld = Math.floor(timeinmilisec / (1000 * 60 * 60 * 24));
+var yearsOld = Math.floor(daysOld/365);
+
 //////////   DISPLAY EMBEDDED PROFILE INFO   //////////
 app.get('/api/profile', function api_index(req, res) {
   res.json({
@@ -94,6 +104,7 @@ app.get('/api/profile', function api_index(req, res) {
     currentCity: "San Francisco",
     isWeird: true,
     isAwake: time(),
+    age: yearsOld,
     familyMembers: [
       { name: 'Barbara Dean', relationship: 'mother' },
       { name: 'Philipe', relationship: 'sibling' },
@@ -101,6 +112,7 @@ app.get('/api/profile', function api_index(req, res) {
     ]
   })
 });
+
 //////////   SHOW ALL ARTISTS   //////////
 app.get('/api/artists', function (req, res) {
   db.Artist.find(function(err, artists) {
@@ -108,12 +120,14 @@ app.get('/api/artists', function (req, res) {
     res.json(artists);
   });
 });
+
 //////////   SHOW ONE ARTIST   //////////
 app.get('/api/artists/:id', function (req, res) {
   db.Artist.findOne({_id: req.params.id }, function(err, artistData) {
     res.json(artistsData);
   });
 });
+
 //////////   ADD ARTIST TO DATABASE   //////////
 app.post('/api/artists', function (req, res) {
   console.log('artists create', req.body);

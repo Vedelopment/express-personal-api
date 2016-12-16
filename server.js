@@ -48,30 +48,33 @@ app.get('/api', function api_index(req, res) {
     documentationUrl: "https://github.com/example-username/express-personal-api/README.md", // CHANGE ME
     baseUrl: "http://YOUR-APP-NAME.herokuapp.com", // CHANGE ME
     endpoints: [
+
       /// GET ///
+
       {method: "GET", path: "/api", description: "Describes all available endpoints"},
       {method: "GET", path: "/api/profile", description: "Data about me"},
-      {method: "GET", path: "/api/projects", description: "WDI Projects"},
-      {method: "GET", path: "/api/places-lives", description: "Places I've Lived"},
-      {method: "GET", path: "/api/destinations", description: "Places I've traveled to"},
-      {method: "GET", path: "/api/television", description: "Television shows I like"},
       {method: "GET", path: "/api/artists", description: "My favorite music artists"},
-      {method: "GET", path: "/api/my-music", description: "My band's name and bandcamp link"},
+      // {method: "GET", path: "/api/projects", description: "WDI Projects"},
+      // {method: "GET", path: "/api/places-lives", description: "Places I've Lived"},
+      // {method: "GET", path: "/api/destinations", description: "Places I've traveled to"},
+      // {method: "GET", path: "/api/television", description: "Television shows I like"},
+      // {method: "GET", path: "/api/my-music", description: "My band's name and bandcamp link"},
+
       /// POST ///
-      {method: "POST", path: "/api/my-work", description: "WDI Projects"},
-      {method: "POST", path: "/api/places-lives", description: "Places I've Lived"},
-      {method: "POST", path: "/api/destinations", description: "Places I've traveled to"},
-      {method: "POST", path: "/api/television", description: "Television shows I like"},
+
       {method: "POST", path: "/api/artists", description: "My favorite music artists"},
-      {method: "POST", path: "/api/my-music", description: "My band's name and bandcamp link"},
-      /// FUTURE GOALS - CAN THIS ONE PULL FROM ALL MUSIC API? ///
-      {method: "GET", path: "/api/all-music", description: "Engineering and Production credits from All Music"}
+      // {method: "POST", path: "/api/my-work", description: "WDI Projects"},
+      // {method: "POST", path: "/api/places-lives", description: "Places I've Lived"},
+      // {method: "POST", path: "/api/destinations", description: "Places I've traveled to"},
+      // {method: "POST", path: "/api/television", description: "Television shows I like"},
+      // {method: "POST", path: "/api/my-music", description: "My band's name and bandcamp link"},
+      //////////   FUTURE GOALS - CAN THIS ONE PULL FROM ALLMUSIC API?   //////////
+      // {method: "GET", path: "/api/all-music", description: "Engineering and Production credits from All Music"}
     ]
   })
 });
-
+//////////   DISPLAY EMBEDDED PROFILE INFO   //////////
 app.get('/api/profile', function api_index(req, res) {
-  // TODO: Document all your api endpoints below
   res.json({
     name: "Laura Dean",
     githubUsername: "Vedelopment",
@@ -87,11 +90,25 @@ app.get('/api/profile', function api_index(req, res) {
     ]
   })
 });
-
+//////////   SHOW ALL ARTISTS   //////////
 app.get('/api/artists', function (req, res) {
   db.Artist.find(function(err, artists) {
     if(err) {return console.log("index error" + err); }
     res.json(artists);
+  });
+});
+//////////   SHOW ONE ARTIST   //////////
+app.get('/api/artists/:id', function (req, res) {
+  db.Artist.findOne({_id: req.params.id }, function(err, artistData) {
+    res.json(artistsData);
+  });
+});
+//////////   ADD ARTIST TO DATABASE   //////////
+app.post('/api/artists', function (req, res) {
+  console.log('artists create', req.body);
+  var newArtist = new db.Artist(req.body);
+  newArtist.save(function handleDBArtistSaved(err, savedTravel) {
+    res.json(savedArtist);
   });
 });
 

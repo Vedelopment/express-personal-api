@@ -1,10 +1,65 @@
 body {
   color: #333;
-  font-family: Helvetica, Arial, sans-serif;
-  background-color: skyblue; /* Sanity Check! */
+  font-family: 'Oxygen Mono', monospace;
+  background-color: white;
 }
 
 h1 {
-  margin-top: 100px;
+  font-size: 50px;
+  margin-top: 20px;
   text-align: center;
+}
+
+h6 {
+  margin-top: 5px;
+  text-align: center;
+}
+
+.text-LD {
+  font-size: 80px;
+  color: rgb(94,24,140);
+}
+
+.text-atabase {
+  color: rgb(140,24,94);
+}
+
+.attic {
+
+}
+
+.main-columns {
+  text-align: center;
+  height: 540px;
+  margin: 10px auto;
+  background-color: rgb(240,240,240);
+}
+
+.project-box {
+  text-align: center;
+  height: 200px;
+  width: 200px;
+  margin: 320px auto 0 auto;
+  border-radius: 5px;
+  background-color: rgb(94,24,140);
+}
+
+.attic-door {
+  text-align: center;
+  height: 20px;
+  width: 300px;
+  margin: 20px auto 0 auto;
+  border-radius: 5px;
+  background-color: rgb(89,51,15);
+}
+
+.attic-open {
+  transform: rotateX(80deg);
+}
+
+/*BOOTSTRAP MODS*/
+
+.col-centered{
+    float: none;
+    margin: 0 auto;
 }

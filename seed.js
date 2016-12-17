@@ -3,35 +3,37 @@
 
 var db = require('./models');
 
-var artists_list = [
+var projects_list = [
   {
-  name: "Scott Walker",
-  image: "http://ksassets.timeincuk.net/wp/uploads/sites/55/2016/07/2014ScottWalker_Press_020714-1.jpg",
-  genre: "Experimental",
-  soloArtist: true,
-  favoriteAlbum: "The Drift",
-  alive: true
-},
-{
-  name: "The Pharcyde",
-  image: "https://ichef.bbci.co.uk/images/ic/960x540/p01bqp2z.jpg",
-  genre: "Alternative Hip-Hop",
-  soloArtist: false,
-  favoriteAlbum: "Bizarre Ride II",
-  alive: true
+    name: "Personal Portfolio",
+    description: "Get to know me, my work and how I create create unique solutions for my clients' users.",
+    image: "images/vedelopmentPortfolio.png",
+    url: "https://vedelopment.github.io/",
   },
-];
+  {
+    name: "Save The Enterprise! Game",
+    description: "Only you can save the Enterprise ship and her crew by correctly guessing the captain's password!",
+    image: "images/starTrekGame.png",
+    url: "http://save-the-enterprise.bitballoon.com/",
+  },
+  {
+    name: "Tic Tac Toe",
+    description: "A simple tic tac toe game with neveau hipster style so your style blends right in with the game like the quircky wallflower that you are.",
+    image: "images/ticTacToe.png",
+    url: "http://sharp-shooter-amy-54171.bitballoon.com/",
+  },
+  ];
 
-db.Artist.remove({}, function(err, artists){
+db.Project.remove({}, function(err, projects){
   if(err) {
     console.log('Error occurred in remove', err);
   } else {
-    console.log('removed all artists');
+    console.log('removed all projects');
 
     // create new records based on the array books_list
-    db.Artist.create(artists_list, function(err, artists){
+    db.Project.create(projects_list, function(err, projects){
       if (err) { return console.log('err', err); }
-      console.log("created", artists.length, "artists");
+      console.log("created", projects.length, "projects");
       process.exit();
     });
   }

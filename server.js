@@ -53,21 +53,13 @@ app.get('/api', function api_index(req, res) {
 
       {method: "GET", path: "/api", description: "Describes all available endpoints"},
       {method: "GET", path: "/api/profile", description: "Data about me"},
-      {method: "GET", path: "/api/artists", description: "My favorite music artists"},
+      {method: "GET", path: "/api/projects", description: "My projects"},
       // {method: "GET", path: "/api/projects", description: "WDI Projects"},
       // {method: "GET", path: "/api/places-lives", description: "Places I've Lived"},
       // {method: "GET", path: "/api/destinations", description: "Places I've traveled to"},
       // {method: "GET", path: "/api/television", description: "Television shows I like"},
       // {method: "GET", path: "/api/my-music", description: "My band's name and bandcamp link"},
 
-      /// POST ///
-
-      {method: "POST", path: "/api/artists", description: "My favorite music artists"},
-      // {method: "POST", path: "/api/my-work", description: "WDI Projects"},
-      // {method: "POST", path: "/api/places-lives", description: "Places I've Lived"},
-      // {method: "POST", path: "/api/destinations", description: "Places I've traveled to"},
-      // {method: "POST", path: "/api/television", description: "Television shows I like"},
-      // {method: "POST", path: "/api/my-music", description: "My band's name and bandcamp link"},
       //////////   FUTURE GOALS - CAN THIS ONE PULL FROM ALLMUSIC API?   //////////
       // {method: "GET", path: "/api/all-music", description: "Engineering and Production credits from All Music"}
     ]
@@ -113,27 +105,27 @@ app.get('/api/profile', function api_index(req, res) {
   })
 });
 
-//////////   SHOW ALL ARTISTS   //////////
-app.get('/api/artists', function (req, res) {
-  db.Artist.find(function(err, artists) {
+//////////   SHOW ALL PROJECTS   //////////
+app.get('/api/projects', function (req, res) {
+  db.Project.find(function(err, projects) {
     if(err) {return console.log("index error" + err); }
-    res.json(artists);
+    res.json(projects);
   });
 });
 
-//////////   SHOW ONE ARTIST   //////////
-app.get('/api/artists/:id', function (req, res) {
-  db.Artist.findOne({_id: req.params.id }, function(err, artistData) {
-    res.json(artistsData);
+//////////   SHOW ONE PROJECT   //////////
+app.get('/api/projects/:id', function (req, res) {
+  db.Project.findOne({_id: req.params.id }, function(err, projectData) {
+    res.json(projectData);
   });
 });
 
-//////////   ADD ARTIST TO DATABASE   //////////
-app.post('/api/artists', function (req, res) {
-  console.log('artists create', req.body);
-  var newArtist = new db.Artist(req.body);
-  newArtist.save(function handleDBArtistSaved(err, savedTravel) {
-    res.json(savedArtist);
+//////////   ADD PROJECT TO DATABASE   //////////
+app.post('/api/projects', function (req, res) {
+  console.log('projects create', req.body);
+  var newProject = new db.Project(req.body);
+  newProject.save(function handleDBProjectSaved(err, savedProject) {
+    res.json(savedProject);
   });
 });
 

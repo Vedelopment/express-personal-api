@@ -30,9 +30,10 @@
           <div id="projects" class="column list-anim">
             <p class="column-heading">WDI-34 Student Projects</p>
             <ul id="projectsList" class="main-list">
-              <li><span>"Tic Tac Toe" Alessandro Pianetta</span></li>
+              <li><span>"Tic Tac Toe" by Alessandro Pianetta</span></li>
               <li><span>"Save The Enterprise!" by LD Dean</span></li>
               <li><span>"A thing" by Ryan Johnson</span></li>
+              <li><span>"Global Thermonuclear War" by Stephen Falken</span></li>
             </ul>
           </div>
         </div>
@@ -42,17 +43,19 @@
             <p class="column-heading">Meetups</p>
             <ul id="meetupsList" class="main-list">
                 <li><span>A meetup of UX cats in SF</span></li>
-                <li><span>A meetup of developer geese Oakland</span></li>
+                <li><span>A meetup of developer geese in Oakland</span></li>
                 <li><span>A meetup of data science muffins in Austin</span></li>
                 <li><span>Mongeese Code! (Mongeese only please)</span></li>
             </ul>
           </div>
         </div>
-        <script id="project-li-template" type="text/x-handlebars-template">
-          <ul id="projectsList" class="main-list">
+        <audio id="compAudio" src="audio/processing3s.wav" type="audio/mpeg"></audio>
+<!-- projects list template -->
+        <script type="text/x-handlebars-template">
+          <ul id="projectsSource" class="main-list">
             {{#each developers}}
-            <li>{{name}}</li>
-            <li>{{description}}</li>
+            <li>{{project.student_name}}</li>
+            <li>{{project.project_name}}</li>
             </br>
             {{/each}}
           </ul>

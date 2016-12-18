@@ -1,12 +1,20 @@
 console.log("Sanity Check: JS is working!");
 
 $(document).ready(function(){
+  var x = document.getElementById("compAudio");
+  // var projectsSource = $('#projectsSource').html();
+  // var projectsTemplate = Handelbars.compile(projectsSource);
+
+
+  function playProcessing() {
+    x.play();
+  }
   $('.list-anim').click(function showProjectsList() {
     var thing = this;
     $(thing).find('ul').toggleClass('list-show');
     $(thing).find('span').toggleClass('typewriter');
+    if ($(this).find('ul').hasClass('list-show')) {
+        playProcessing();
+    };
   });
-  var source = $('#project-li-template').html();
-  var projectTemplate = Handlebars.compile(source);
-  var projectHtml = template({name: data.developers[0].first_name, last_name: data.developers[0].last_name, github_username: data.developers[0].github_username });
 });

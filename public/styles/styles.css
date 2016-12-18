@@ -78,9 +78,9 @@ li {
   display: inline-block;
   overflow: hidden; /* Ensures the content is not revealed until the animation */
   border-right: .15em solid transparent; /* The typwriter cursor */
-  white-space: nowrap; /* Keeps the content on a single line */
+  white-space: nowrap; 
   animation:
-    typing 4s steps(20, end),
+    typing 4s steps(45, end),
     blink-caret .75s step-end 8;
 }
 /* The typing effect */

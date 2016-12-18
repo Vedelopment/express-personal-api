@@ -2,7 +2,8 @@ var mongoose = require('mongoose'),
   Schema = mongoose.Schema;
 
 var ProjectSchema = new Schema({
-  name: String,
+  student_name: String,
+  project_name: String,
   description: String,
   image: String,
   url: String,

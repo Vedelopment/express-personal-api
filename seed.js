@@ -5,19 +5,22 @@ var db = require('./models');
 
 var projects_list = [
   {
-    name: "Personal Portfolio",
+    student_name: "LD Dean",
+    project_name: "Personal Portfolio",
     description: "Get to know me, my work and how I create create unique solutions for my clients' users.",
     image: "images/vedelopmentPortfolio.png",
     url: "https://vedelopment.github.io/",
   },
   {
-    name: "Save The Enterprise! Game",
+    student_name: "LD Dean",
+    project_name: "Save The Enterprise! Game",
     description: "Only you can save the Enterprise ship and her crew by correctly guessing the captain's password!",
     image: "images/starTrekGame.png",
     url: "http://save-the-enterprise.bitballoon.com/",
   },
   {
-    name: "Tic Tac Toe",
+    student_name: "LD Dean",
+    project_name: "Tic Tac Toe",
     description: "A simple tic tac toe game with neveau hipster style so your style blends right in with the game like the quircky wallflower that you are.",
     image: "images/ticTacToe.png",
     url: "http://sharp-shooter-amy-54171.bitballoon.com/",

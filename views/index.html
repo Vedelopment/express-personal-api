@@ -28,14 +28,11 @@
 <!-- projects column -->
         <div class="main-columns col-sm-6">
           <div id="projects" class="column list-anim">
-            <p class="column-heading">Projects</p>
-            <ul is "projectsList" class="main-list">
-              <li><span>One here</span></li>
-              <li><span>!!!</span></li>
-              <li><span>One hejsef</span></li>
-              <li><span>One hereajsofij</span></li>
-              <li><span>sko;efijaso;eifjasoeifjspaioejf</span></li>
-              <li><span>whiskers and muffins and stuff</span></li>
+            <p class="column-heading">WDI-34 Student Projects</p>
+            <ul id="projectsList" class="main-list">
+              <li><span>"Tic Tac Toe" Alessandro Pianetta</span></li>
+              <li><span>"Save The Enterprise!" by LD Dean</span></li>
+              <li><span>"A thing" by Ryan Johnson</span></li>
             </ul>
           </div>
         </div>
@@ -44,15 +41,21 @@
           <div id="meetups" class="column list-anim">
             <p class="column-heading">Meetups</p>
             <ul id="meetupsList" class="main-list">
-                <li><span>One here</span></li>
-                <li><span>!!!</span></li>
-                <li><span>One hejsef</span></li>
-                <li><span>One hereajsofij</span></li>
-                <li><span>sko;efijaso;eifjasoeifjspaioejf</span></li>
-                <li><span>whiskers and muffins and stuff</span></li>
+                <li><span>A meetup of UX cats in SF</span></li>
+                <li><span>A meetup of developer geese Oakland</span></li>
+                <li><span>A meetup of data science muffins in Austin</span></li>
+                <li><span>Mongeese Code! (Mongeese only please)</span></li>
             </ul>
           </div>
         </div>
-
+        <script id="project-li-template" type="text/x-handlebars-template">
+          <ul id="projectsList" class="main-list">
+            {{#each developers}}
+            <li>{{name}}</li>
+            <li>{{description}}</li>
+            </br>
+            {{/each}}
+          </ul>
+        </script>
   </body>
 </html>

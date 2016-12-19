@@ -51,13 +51,18 @@
         </div>
         <audio id="compAudio" src="audio/processing3s.wav" type="audio/mpeg"></audio>
 <!-- projects list template -->
-        <script id="project-template" type="text/x-handlebars-template"> 
-            <p>{{project}}</p>
-            <p>{{student_name}}</p>
-            <p>{{project_name}}</p>
-            <p>{{description}}</p>
-            <p>{{image}}</p>
-            <p>{{url}}</p>
+        <script id="project-template" type="text/x-handlebars-template">
+          {{#each project}}
+            <p>
+              <p>{{student_name}}</p>
+              <p>{{project_name}}</p>
+              <p>{{description}}</p>
+              <p>{{image}}</p>
+              <p>{{url}}</p>
+              </br>
+              <!-- <button type="button" name="button" class="deleteBtn btn btn-danger pull-right" data-id={{_id}}>Delete</button> -->
+            </p>
+          {{/each}}
         </script>
   </body>
 </html>

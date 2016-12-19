@@ -5,7 +5,7 @@ var express = require('express'),
 // parse incoming urlencoded form data
 // and populate the req.body object
 var bodyParser = require('body-parser');
-// app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.urlencoded({ extended: true }));
 
 // allow cross origin requests (optional)
 // https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS
@@ -35,6 +35,14 @@ app.use(express.static('public'));
 
 app.get('/', function homepage(req, res) {
   res.sendFile(__dirname + '/views/index.html');
+});
+
+app.get('/api/projects', function (req, res) {
+  // send all books as JSON response
+  db.Project.find(function(err, projects){
+    if (err) { return console.log("index error: " + err); }
+    res.json(projects);
+  });
 });
 
 

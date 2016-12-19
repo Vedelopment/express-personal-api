@@ -29,7 +29,7 @@
         <div class="main-columns col-sm-6">
           <div id="projects" class="column list-anim">
             <p class="column-heading">WDI-34 Student Projects</p>
-            <ul id="projectsList" class="main-list">
+            <ul id="project-list" class="main-list">
               <li><span>"Tic Tac Toe" by Alessandro Pianetta</span></li>
               <li><span>"Save The Enterprise!" by LD Dean</span></li>
               <li><span>"A thing" by Ryan Johnson</span></li>
@@ -41,7 +41,7 @@
         <div class="main-columns col-sm-6">
           <div id="meetups" class="column list-anim">
             <p class="column-heading">Meetups</p>
-            <ul id="meetupsList" class="main-list">
+            <ul id="meetup-list" class="main-list">
                 <li><span>A meetup of UX cats in SF</span></li>
                 <li><span>A meetup of developer geese in Oakland</span></li>
                 <li><span>A meetup of data science muffins in Austin</span></li>
@@ -51,14 +51,14 @@
         </div>
         <audio id="compAudio" src="audio/processing3s.wav" type="audio/mpeg"></audio>
 <!-- projects list template -->
-        <script type="text/x-handlebars-template">
-          <ul id="projectsSource" class="main-list">
-            {{#each developers}}
-            <li>{{project.student_name}}</li>
-            <li>{{project.project_name}}</li>
-            </br>
-            {{/each}}
-          </ul>
-        </script>
+        <!-- <script id="project-template" type="text/x-handlebars-template">
+          {{each project}}
+            <p>{{student_name}}</p>
+            <p>{{project_name}}</p>
+            <p>{{description}}</p>
+            <p>{{image}}</p>
+            <p>{{url}}</p>
+          {{/each}}
+        </script> -->
   </body>
 </html>

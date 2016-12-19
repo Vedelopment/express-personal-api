@@ -1,18 +1,21 @@
 console.log("Sanity Check: JS is working!");
 
 $(document).ready(function(){
-  var x = document.getElementById("compAudio");
-  // var projectsSource = $('#projectsSource').html();
-  // var projectsTemplate = Handelbars.compile(projectsSource);
+
+// var projectTemplate = $('#project-template').html();
+// var compiledProjectTemplate = Handlebars.compile(projectTemplate);
+// $('#project-list').html(compiledProjectTemplate);
 
 
+
+// AUDIO //
   function playProcessing() {
-    x.play();
+    compAudio.play();
   }
+// SHOW/HIDE MENUS + AUDIO PLAY //
   $('.list-anim').click(function showProjectsList() {
-    var thing = this;
-    $(thing).find('ul').toggleClass('list-show');
-    $(thing).find('span').toggleClass('typewriter');
+    $(this).find('ul').toggleClass('list-show');
+    $(this).find('span').toggleClass('typewriter');
     if ($(this).find('ul').hasClass('list-show')) {
         playProcessing();
     };

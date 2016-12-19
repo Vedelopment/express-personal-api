@@ -3,7 +3,7 @@
 
 var db = require('./models');
 
-var projects_list = [
+var projects_seed = [
   {
     student_name: "LD Dean",
     project_name: "Personal Portfolio",
@@ -34,7 +34,7 @@ db.Project.remove({}, function(err, projects){
     console.log('removed all projects');
 
     // create new records based on the array books_list
-    db.Project.create(projects_list, function(err, projects){
+    db.Project.create(projects_seed, function(err, projects){
       if (err) { return console.log('err', err); }
       console.log("created", projects.length, "projects");
       process.exit();

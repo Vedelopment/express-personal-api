@@ -5,7 +5,7 @@ var express = require('express'),
 // parse incoming urlencoded form data
 // and populate the req.body object
 var bodyParser = require('body-parser');
-app.use(bodyParser.urlencoded({ extended: true }));
+// app.use(bodyParser.urlencoded({ extended: true }));
 
 // allow cross origin requests (optional)
 // https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS

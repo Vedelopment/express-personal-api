@@ -8,10 +8,10 @@ var template;
 var  allProjects = [];
 
 $.ajax({
-  method: 'GET',
-  url: '/api/projects',
-  success: handleSuccess,
-  error: handleError
+method: 'GET',
+url: '/api/projects',
+success: handleSuccess,
+error: handleError
 });
 
 function render () {
@@ -42,6 +42,9 @@ function handleError(e) {
   }
 // SHOW/HIDE MENUS + AUDIO PLAY //
   $('.list-anim').click(function showProjectsList() {
+    // var thisId = ($(this).attr('id'));
+    // if (thisId == "projects") {
+    // }
     $(this).find('ul').toggleClass('list-show');
     $(this).find('span').toggleClass('typewriter');
     if ($(this).find('ul').hasClass('list-show')) {

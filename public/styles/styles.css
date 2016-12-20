@@ -61,6 +61,7 @@ font-size: 1em;
   color: rgba(50,250,50,0);
   max-height: 0;
   padding: 0;
+  overflow: hidden;
 }
 .list-show {
   color: rgba(0,250,0,1);
@@ -78,7 +79,7 @@ li {
   display: inline-block;
   overflow: hidden; /* Ensures the content is not revealed until the animation */
   border-right: .15em solid transparent; /* The typwriter cursor */
-  white-space: nowrap; 
+  white-space: nowrap;
   animation:
     typing 4s steps(45, end),
     blink-caret .75s step-end 8;

@@ -19,8 +19,8 @@ p {
 }
 a {
   color: rgb(0,250,0);
-  padding: 10px;
-  text-decoration: none;
+  padding: 2px 1px;
+  text-decoration: underline;
   transition: all .2s;
 }
 a:hover {
@@ -65,7 +65,7 @@ font-size: 1em;
 }
 .list-show {
   color: rgba(0,250,0,1);
-  max-height: 1000px;
+  max-height: 10000px;
   padding: 0;
   transition: .5s ease;
 }

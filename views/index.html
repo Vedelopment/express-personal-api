@@ -55,12 +55,35 @@
           {{#each project}}
             <p>
               <p><a href="{{url}}">{{project_name}}</a></p>
-              <p>{{student_name}}</p>
+              </br>
+              <p>by {{student_name}}</p>
+              </br>
               <p>{{description}}</p>
-              <p>{{image}}</p>
+              </br>
+              <img src="{{image}}" width="400px">
               </br>
               <!-- <button type="button" name="button" class="deleteBtn btn btn-danger pull-right" data-id={{_id}}>Delete</button> -->
             </p>
+            </br>
+            </br>
+          {{/each}}
+        </script>
+<!-- meetups list template -->
+        <script id="meetup-template" type="text/x-handlebars-template">
+          {{#each meetup}}
+            <p>
+              <p><a href="{{url}}">{{meetup_name}}</a></p>
+              </br>
+              <p>by {{location}}</p>
+              </br>
+              <p>{{description}}</p>
+              </br>
+              <img src="{{image}}">
+              </br>
+              <!-- <button type="button" name="button" class="deleteBtn btn btn-danger pull-right" data-id={{_id}}>Delete</button> -->
+            </p>
+            </br>
+            </br>
           {{/each}}
         </script>
   </body>

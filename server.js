@@ -38,10 +38,19 @@ app.get('/', function homepage(req, res) {
 });
 
 app.get('/api/projects', function (req, res) {
-  // send all books as JSON response
+  // send all projects as JSON response
   db.Project.find(function(err, projects){
     if (err) { return console.log("index error: " + err); }
     res.json(projects);
+  });
+});
+
+app.get('/api/meetups', function (req, res) {
+  console.log('meow');
+  // send all meetups as JSON response
+  db.Meetup.find(function(err, meetups){
+    if (err) { return console.log("index error: " + err); }
+    res.json(meetups);
   });
 });
 
@@ -62,6 +71,7 @@ app.get('/api', function api_index(req, res) {
       {method: "GET", path: "/api", description: "Describes all available endpoints"},
       {method: "GET", path: "/api/profile", description: "Data about me"},
       {method: "GET", path: "/api/projects", description: "My projects"},
+      {method: "GET", path: "/api/meetups", description: "My meetups"},
       // {method: "GET", path: "/api/projects", description: "WDI Projects"},
       // {method: "GET", path: "/api/places-lives", description: "Places I've Lived"},
       // {method: "GET", path: "/api/destinations", description: "Places I've traveled to"},
@@ -134,6 +144,14 @@ app.post('/api/projects', function (req, res) {
   var newProject = new db.Project(req.body);
   newProject.save(function handleDBProjectSaved(err, savedProject) {
     res.json(savedProject);
+  });
+});
+
+//////////   SHOW ALL MEETUPS   //////////
+app.get('/api/meetups', function (req, res) {
+  db.Meetup.find(function(err, meetups) {
+    if(err) {return console.log("index error" + err); }
+    res.json(meetups);
   });
 });
 

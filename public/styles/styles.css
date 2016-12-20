@@ -17,6 +17,9 @@ p {
   margin: 0;
   font-size: 1.2em;
 }
+hr {
+  border-color: rgb(0,250,0);
+}
 a {
   color: rgb(0,250,0);
   padding: 2px 1px;

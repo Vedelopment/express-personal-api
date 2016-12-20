@@ -22,7 +22,7 @@ var projects_seed = [
   {
     student_name: "LD Dean",
     project_name: "Tic Tac Toe",
-    description: "A simple tic tac toe game with neveau hipster style so your style blends right in with the game like the quircky wallflower that you are.",
+    description: "A simple tic tac toe game with neveau hipster style so you blend right in with the game like the quirky wallflower that you are.",
     image: "images/ticTacToe.png",
     url: "http://sharp-shooter-amy-54171.bitballoon.com/",
   },
